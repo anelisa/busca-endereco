@@ -1,0 +1,12 @@
+<div>
+  <h2>Lista de CEPs encontrados: </h2>
+  <ul>
+    <li *ngFor="let address of addresses" (click)="selectAddress(address)"  class="address-item">
+      <p>CEP: {{address.cep}}</p>
+      <p>Logradouro: {{address.logradouro}} - {{address.bairro}}</p>
+      <p>Estado: {{address.estado}} - {{address.uf}}</p>
+      <p>Região: {{address.regiao}}</p>
+      <hr>
+    </li>
+  </ul>
+</div>

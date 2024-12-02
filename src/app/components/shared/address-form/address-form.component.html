@@ -1,0 +1,47 @@
+<div class="form">
+  <form action="">
+    <label for="state" class="form__label">Estado: </label>
+    <select
+      [(ngModel)]="selectedState"
+      name="state"
+      (change)="onStateChange()"
+      class="form__control"
+    >
+      <option value="" disabled>Selecione um estado</option>
+      <option *ngFor="let state of states" [value]="state.id">
+        {{state.nome}}
+      </option>
+    </select>
+    <br>
+    <label for="cities" class="form__label">Cidades: </label>
+    <select
+      name="cities"
+      id="cities"
+      [(ngModel)]="selectedCitie"
+      [disabled]="!selectedState"
+      class="form__control"
+    >
+      <option value="" disabled>Selecione uma cidade</option>
+      <option *ngFor="let city of cities" [value]="city.nome">
+        {{ city.nome }}
+      </option>
+    </select>
+
+    <br>
+    <label for="street" class="form__label">Rua: </label>
+    <input type="text" id="street" class="form__control" name="street" [(ngModel)]="street" placeholder="Digite a rua que deseja pesquisar..." required />
+
+    <br>
+    <button
+      type="button"
+      [disabled]="!selectedState || !selectedCitie || !street"
+      (click)="search()"
+      class="form__button"
+    >
+      Pesquisar
+    </button>
+  </form>
+
+  <app-address-list *ngIf="addresses && addresses.length > 0" [addresses]="addresses"></app-address-list>
+</div>
+

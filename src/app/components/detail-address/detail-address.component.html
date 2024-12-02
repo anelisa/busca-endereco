@@ -1,0 +1,19 @@
+<div class="details details__result">
+  <h1>Detalhes do CEP</h1>
+  <p>Endereço selecionado: {{details?.cep}}</p>
+  <dl>
+    <dt>Endereço:</dt>
+    <dd>{{details?.logradouro}}</dd>
+
+    <dt>Bairro:</dt>
+    <dd>{{details?.bairro}}</dd>
+
+    <dt>Cidade:</dt>
+    <dd>{{details?.localidade}}</dd>
+
+    <dt>Estado:</dt>
+    <dd>{{details?.estado}}</dd>
+  </dl>
+
+  <button class="details__button" (click)="goBack()">Voltar</button>
+</div>

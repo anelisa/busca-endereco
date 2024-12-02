@@ -1,0 +1,13 @@
+<div class="container">
+
+  <div class="container--gray-theme container__content">
+    <h1>App para consulta de CEPs</h1>
+    <p>Selecione um estado, cidade e informe um texto mais proximo possivel da rua que se deseja localizar os CEPs.</p>
+    <div>
+      <app-address-form (loading)="onLoadingChange($event)"></app-address-form>
+    </div>
+  </div>
+  <div *ngIf="isLoading" class="container--loading-theme container--loading-theme__content">
+    <p>Carregando...</p>
+  </div>
+</div>

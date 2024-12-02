@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    width: auto;
+    height: auto;
+  }
+
+  &--gray-theme {
+    background-color: #DCDCDC;
+  }
+
+  &--loading-theme {
+    background-color: #FA8072;
+    color: #E0FFFF;
+
+    &__content {
+      margin-top: 5px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  }
+}
+
+
