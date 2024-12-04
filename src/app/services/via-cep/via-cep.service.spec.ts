@@ -19,7 +19,7 @@ describe('ViaCepService', () => {
   });
 
   afterEach(() => {
-    httpMock.verify(); // Verifica se não há requisições pendentes
+    httpMock.verify();
   });
 
   it('deve ser criado', () => {
@@ -60,8 +60,7 @@ describe('ViaCepService', () => {
         `${API_ENDPOINTS.VIA_CEP}/${mockParams.estado}/${mockParams.cidade}/${mockParams.rua}/json/`
       );
       expect(req.request.method).toBe('GET');
-      req.flush(mockResponse); // Simula a resposta da API
-    });
+      req.flush(mockResponse);
   });
 
   describe('getAddressDetails', () => {
@@ -89,7 +88,7 @@ describe('ViaCepService', () => {
 
       const req = httpMock.expectOne(`${API_ENDPOINTS.VIA_CEP}/${mockCep}/json`);
       expect(req.request.method).toBe('GET');
-      req.flush(mockResponse); // Simula a resposta da API
+      req.flush(mockResponse); 
     });
   });
 });
